@@ -21,11 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.creature.name;
+    self.detailLabel.text = self.creature.detail;
     self.nameLabel.text = self.title;
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [self.delegate editNameOfCreature:self.title];
+    [self.delegate editNameOfCreature:self.title withDetail:self.detailLabel.text];
 }
 
 - (IBAction)onEditPressed:(UIButton *)sender {

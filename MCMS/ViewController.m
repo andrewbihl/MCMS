@@ -14,15 +14,17 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property NSMutableArray* creatures;
+@property (weak, nonatomic) IBOutlet UITextField *detailField;
 
 @end
 
 @implementation ViewController
 
--(void)editNameOfCreature:(NSString *)newCreatureName{
+-(void)editNameOfCreature:(NSString *)newCreatureName withDetail:(NSString *)newCreatureDetail{
     NSIndexPath* editedCreaturePath = [self.tableView indexPathForSelectedRow];
     MagicalCreature* creatureEdited = [self.creatures objectAtIndex:editedCreaturePath.row];
     creatureEdited.name = newCreatureName;
+    creatureEdited.detail = newCreatureDetail;
     [self.tableView reloadData];
 }
 
@@ -37,9 +39,10 @@
 }
 
 - (IBAction)onAddPressed:(id)sender {
-    MagicalCreature* newCreature = [[MagicalCreature alloc]initWithName:self.textField.text];
+    MagicalCreature* newCreature = [[MagicalCreature alloc]initWithName:self.textField.text withDetail:self.detailField.text];
     [self.creatures addObject:newCreature];
     self.textField.text = @"";
+    self.detailField.text = @"";
     [self.tableView reloadData];
 }
 
@@ -51,6 +54,7 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     MagicalCreature* current = self.creatures[indexPath.row];
     cell.textLabel.text = current.name;
+    cell.detailTextLabel.text = current.detail;
     return cell;
 }
 
@@ -58,7 +62,7 @@
     CreatureViewController* dvc = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     MagicalCreature *current = [self.creatures objectAtIndex:indexPath.row];
-    dvc.title = current.name;
+    dvc.creature = current;
     dvc.delegate = self;
 }
 

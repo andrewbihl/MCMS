@@ -7,15 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "MagicalCreature.h"
 
 @protocol CreatureViewDelegate<NSObject>
 
--(void)editNameOfCreature:(NSString*)newCreatureName;
+-(void)editNameOfCreature:(NSString*)newCreatureName withDetail:(NSString*)newCreatureDetail;
 
 @end
 
 @interface CreatureViewController : ViewController
-
+@property MagicalCreature* creature;
 @property id<CreatureViewDelegate> delegate;
 
 

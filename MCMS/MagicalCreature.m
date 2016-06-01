@@ -9,11 +9,21 @@
 #import "MagicalCreature.h"
 
 @implementation MagicalCreature
--(instancetype)initWithName:(NSString*)name{
+-(instancetype)initWithName:(NSString*)name withDetail:(NSString*)detail{
+    self = [super init];
+    if (self){
+        self.name = name;
+        self.detail = detail;
+    }
+    return self;
+}
+
+-(instancetype)initWithName:(NSString*)name {
     self = [super init];
     if (self){
         self.name = name;
     }
     return self;
 }
+
 @end
