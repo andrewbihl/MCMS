@@ -45,4 +45,22 @@
     cell.textLabel.text = current.name;
     return cell;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UIViewController* dvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    MagicalCreature *current = [self.creatures objectAtIndex:indexPath.row];
+    dvc.title = current.name;
+}
+
+
+
+
+
+
+
+
+
+
+
 @end
