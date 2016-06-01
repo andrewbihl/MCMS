@@ -8,6 +8,15 @@
 
 #import "ViewController.h"
 
+@protocol CreatureViewDelegate<NSObject>
+
+-(void)editNameOfCreature:(NSString*)newCreatureName;
+
+@end
+
 @interface CreatureViewController : ViewController
+
+@property id<CreatureViewDelegate> delegate;
+
 
 @end

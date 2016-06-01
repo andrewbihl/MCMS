@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "CreatureViewController.h"
 #import "MagicalCreature.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,CreatureViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property NSMutableArray* creatures;
@@ -18,12 +19,19 @@
 
 @implementation ViewController
 
+-(void)editNameOfCreature:(NSString *)newCreatureName{
+    NSIndexPath* editedCreaturePath = [self.tableView indexPathForSelectedRow];
+    MagicalCreature* creatureEdited = [self.creatures objectAtIndex:editedCreaturePath.row];
+    creatureEdited.name = newCreatureName;
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.creatures = [NSMutableArray new];
-    MagicalCreature* creature1 = [[MagicalCreature alloc]initWithName:@"Chris the Protector of the Night Realm"];
-    MagicalCreature* creature2 = [[MagicalCreature alloc]initWithName:@"Andrew the Asshole"];
-    MagicalCreature* creature3 = [[MagicalCreature alloc]initWithName:@"Big Ben"];
+    MagicalCreature* creature1 = [[MagicalCreature alloc]initWithName:@"Chris, Protector of the Night Realm"];
+    MagicalCreature* creature2 = [[MagicalCreature alloc]initWithName:@"Andrew"];
+    MagicalCreature* creature3 = [[MagicalCreature alloc]initWithName:@"BEN"];
     [self.creatures addObjectsFromArray:@[creature1,creature2,creature3]];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -47,19 +55,12 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    UIViewController* dvc = segue.destinationViewController;
+    CreatureViewController* dvc = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     MagicalCreature *current = [self.creatures objectAtIndex:indexPath.row];
     dvc.title = current.name;
+    dvc.delegate = self;
 }
-
-
-
-
-
-
-
-
 
 
 

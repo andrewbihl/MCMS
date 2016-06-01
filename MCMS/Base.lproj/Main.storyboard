@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WF-Zs-97L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7WF-Zs-97L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -87,23 +87,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAt-Xy-ANa">
-                                <rect key="frame" x="245" y="230" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAt-Xy-ANa">
+                                <rect key="frame" x="469" y="111" width="111" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="onEditPressed:" destination="imf-Uo-NVQ" eventType="touchUpInside" id="OGs-av-Vt7"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20m-cO-VbR">
-                                <rect key="frame" x="20" y="120" width="560" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrD-E0-4CZ">
+                                <rect key="frame" x="89" y="111" width="300" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20m-cO-VbR">
+                                <rect key="frame" x="89" y="111" width="300" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Details" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WU-vx-7xn">
+                                <rect key="frame" x="89" y="184" width="300" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSw-90-rbG">
+                                <rect key="frame" x="89" y="184" width="300" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="20m-cO-VbR" firstAttribute="centerX" secondItem="HrD-E0-4CZ" secondAttribute="centerX" id="0yr-UP-YJL"/>
+                            <constraint firstItem="HrD-E0-4CZ" firstAttribute="leading" secondItem="B7U-dK-GJn" secondAttribute="leadingMargin" constant="69" id="1OK-dh-zMZ"/>
+                            <constraint firstItem="CAt-Xy-ANa" firstAttribute="trailing" secondItem="B7U-dK-GJn" secondAttribute="trailingMargin" id="1cL-Ln-05T"/>
+                            <constraint firstItem="20m-cO-VbR" firstAttribute="leading" secondItem="B7U-dK-GJn" secondAttribute="leadingMargin" constant="69" id="BvL-EH-AeA"/>
+                            <constraint firstItem="3WU-vx-7xn" firstAttribute="leading" secondItem="B7U-dK-GJn" secondAttribute="leadingMargin" constant="69" id="Ew7-AN-wAT"/>
+                            <constraint firstItem="vSw-90-rbG" firstAttribute="leading" secondItem="3WU-vx-7xn" secondAttribute="leading" id="KSm-Ti-83C"/>
+                            <constraint firstItem="vSw-90-rbG" firstAttribute="centerY" secondItem="3WU-vx-7xn" secondAttribute="centerY" id="Y90-1l-QWb"/>
+                            <constraint firstItem="20m-cO-VbR" firstAttribute="leading" secondItem="HrD-E0-4CZ" secondAttribute="leading" id="cS0-vh-2HO"/>
+                            <constraint firstItem="vSw-90-rbG" firstAttribute="centerX" secondItem="3WU-vx-7xn" secondAttribute="centerX" id="dlR-Yc-HSt"/>
+                            <constraint firstItem="20m-cO-VbR" firstAttribute="centerY" secondItem="HrD-E0-4CZ" secondAttribute="centerY" id="hzd-Eu-LK8"/>
+                            <constraint firstItem="vSw-90-rbG" firstAttribute="leading" secondItem="B7U-dK-GJn" secondAttribute="leadingMargin" constant="69" id="tSd-Qb-yFg"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailEditView" destination="vSw-90-rbG" id="VF9-h4-kPN"/>
+                        <outlet property="detailLabel" destination="3WU-vx-7xn" id="ZZ4-f2-RyK"/>
                         <outlet property="nameEditField" destination="20m-cO-VbR" id="top-Pz-dAi"/>
+                        <outlet property="nameLabel" destination="HrD-E0-4CZ" id="YUS-pS-zYE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNh-t7-LBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
