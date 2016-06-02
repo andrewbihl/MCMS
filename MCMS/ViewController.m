@@ -42,7 +42,7 @@
     self.creatures = [NSMutableArray new];
     MagicalCreature* creature1 = [[MagicalCreature alloc]initWithName:@"The Blue Mamba"];
     creature1.imageName = [self getImageForCreature];
-    MagicalCreature* creature2 = [[MagicalCreature alloc]initWithName:@"Creepy McCreepFace"];
+    MagicalCreature* creature2 = [[MagicalCreature alloc]initWithName:@"Boaty McBoatface"];
     creature2.imageName = [self getImageForCreature];
     MagicalCreature* creature3 = [[MagicalCreature alloc]initWithName:@"Avatar" withDetail:@"The Ugliest Airbender"];
     creature3.imageName = [self getImageForCreature];
@@ -86,6 +86,8 @@
     NSLog(@"Fighter1: %@, Fighter2: %@",self.fighter1.name,self.fighter2.name);
 }
 - (IBAction)onAddPressed:(id)sender {
+    if ([self.textField.text isEqualToString:@""])
+        return;
     MagicalCreature* newCreature = [[MagicalCreature alloc]initWithName:self.textField.text withDetail:self.detailField.text];
     newCreature.imageName = [self getImageForCreature];
     [self.creatures addObject:newCreature];
@@ -101,7 +103,7 @@
 -(NSString*)getImageForCreature{
     int random = rand()%self.imageNames.count;
     NSLog(@"%d",random);
-    NSString* imageString = [self.imageNames objectAtIndex:(rand()% (self.imageNames.count))];
+    NSString* imageString = [self.imageNames objectAtIndex:random];
     return imageString;
 }
 

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailEditView;
 @property (weak, nonatomic) IBOutlet UITextView *accessoryEditView;
+@property (weak, nonatomic) IBOutlet UIImageView *creatureImage;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.creatureImage.image = [UIImage imageNamed:self.creature.imageName];
     NSMutableString* accessoryString = [NSMutableString new];
     for (NSString* accessory in self.creature.accessories)
         [accessoryString appendFormat:@"\n%@", accessory];

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fighterTwoImage;
 @property (weak, nonatomic) IBOutlet UILabel *fighter1Label;
 @property (weak, nonatomic) IBOutlet UILabel *fighter2Label;
+@property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
 
 @end
 
@@ -22,6 +23,13 @@
     [super viewDidLoad];
     self.fighter1Label.text = self.fighter1.name;
     self.fighter2Label.text = self.fighter2.name;
+    int r = rand()%2;
+    NSLog(self.fighter2.name);
+    if (r==0)
+        self.winnerLabel.text =[NSString stringWithFormat:@"%@ wins!", self.fighter1.name];
+    else
+        self.winnerLabel.text = [NSString stringWithFormat:@"%@ wins!", self.fighter2.name];
+        
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"battleBackground.jpg"] drawInRect:self.view.bounds];
     UIImage* backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
