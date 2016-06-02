@@ -15,6 +15,7 @@
 		2F35FADE1CFF6BB900016DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F35FADC1CFF6BB900016DBE /* LaunchScreen.storyboard */; };
 		2F35FAE71CFF6BDA00016DBE /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F35FAE61CFF6BDA00016DBE /* MagicalCreature.m */; };
 		2F35FAEA1CFF713000016DBE /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F35FAE91CFF713000016DBE /* CreatureViewController.m */; };
+		2F35FAED1CFFE5DC00016DBE /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F35FAEC1CFFE5DC00016DBE /* BattleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		2F35FAE61CFF6BDA00016DBE /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
 		2F35FAE81CFF713000016DBE /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
 		2F35FAE91CFF713000016DBE /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
+		2F35FAEB1CFFE5DC00016DBE /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
+		2F35FAEC1CFFE5DC00016DBE /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				2F35FAD41CFF6BB900016DBE /* ViewController.h */,
 				2F35FAD51CFF6BB900016DBE /* ViewController.m */,
 				2F35FAD71CFF6BB900016DBE /* Main.storyboard */,
+				2F35FAEB1CFFE5DC00016DBE /* BattleViewController.h */,
+				2F35FAEC1CFFE5DC00016DBE /* BattleViewController.m */,
 				2F35FAE81CFF713000016DBE /* CreatureViewController.h */,
 				2F35FAE91CFF713000016DBE /* CreatureViewController.m */,
 				2F35FAE51CFF6BDA00016DBE /* MagicalCreature.h */,
@@ -162,6 +167,7 @@
 			files = (
 				2F35FAD61CFF6BB900016DBE /* ViewController.m in Sources */,
 				2F35FAE71CFF6BDA00016DBE /* MagicalCreature.m in Sources */,
+				2F35FAED1CFFE5DC00016DBE /* BattleViewController.m in Sources */,
 				2F35FAD31CFF6BB900016DBE /* AppDelegate.m in Sources */,
 				2F35FAEA1CFF713000016DBE /* CreatureViewController.m in Sources */,
 				2F35FAD01CFF6BB900016DBE /* main.m in Sources */,
@@ -313,6 +319,7 @@
 				2F35FAE41CFF6BB900016DBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

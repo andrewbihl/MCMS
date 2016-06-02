@@ -9,6 +9,7 @@
 #import "MagicalCreature.h"
 
 @implementation MagicalCreature
+
 -(instancetype)initWithName:(NSString*)name withDetail:(NSString*)detail{
     self = [super init];
     if (self){
@@ -16,6 +17,10 @@
         self.detail = detail;
     }
     return self;
+}
+
+-(void)addAccessory:(NSString *)accessory{
+    [self.accessories addObject:accessory];
 }
 
 -(instancetype)initWithName:(NSString*)name {

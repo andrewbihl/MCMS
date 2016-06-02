@@ -13,14 +13,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailEditView;
+@property (weak, nonatomic) IBOutlet UITextView *accessoryEditView;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *accessoryLabel;
 @end
 
 @implementation CreatureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableString* accessoryString = [NSMutableString new];
+    for (NSString* accessory in self.creature.accessories)
+        [accessoryString appendFormat:@"\n%@", accessory];
+    self.accessoryLabel.text = accessoryString;
     self.title = self.creature.name;
     self.detailLabel.text = self.creature.detail;
     self.nameLabel.text = self.title;
@@ -37,7 +43,8 @@
         self.nameEditField.hidden = false;
         self.detailEditView.text = self.detailLabel.text;
         self.detailEditView.hidden = false;
-        
+        self.accessoryEditView.hidden = false;
+        self.accessoryEditView.text = self.accessoryLabel.text;
         [sender setTitle:@"Done" forState:UIControlStateNormal];
         
     }
@@ -46,8 +53,8 @@
         self.nameLabel.text = self.nameEditField.text;
         self.detailEditView.hidden = true;
         self.detailLabel.text = self.detailEditView.text;
-        
-        
+        self.accessoryEditView.hidden = true;
+        self.accessoryLabel.text = self.accessoryEditView.text;
         [sender setTitle:@"Edit" forState:UIControlStateNormal];
         self.title = self.nameLabel.text;
     }
